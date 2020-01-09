@@ -19,16 +19,15 @@ original style, using an open collaborative development process.
 
 
 Name:    %{fontname}-fonts
-Version: 2.30
-Release: 2%{?alphatag}%{?dist}
+Version: 2.33
+Release: 1%{?alphatag}%{?dist}
 Summary: DejaVu fonts
 
 Group:     User Interface/X
 License:   Bitstream Vera and Public Domain
 URL:       http://%{name}.org/
 Source0:   %{?!alphatag:http://downloads.sourceforge.net/%{fontname}}%{?alphatag:%{fontname}.sourceforge.net/snapshots}/%{archivename}.tar.bz2
-Patch0:    %{name}-2.30-bad-serif-condensed-metadata.patch
-BuildRoot: %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXXXX)
+
 
 # Older fontforge versions will not work due to sfd format changes
 BuildRequires: fontforge >= 20080429
@@ -164,7 +163,6 @@ unicode coverage restricted to Latin, Greek and Cyrillic.
 
 %prep
 %setup -q -n %{archivename}
-%patch0 -p1
 
 %build
 make %{?_smp_mflags} VERSION=%{version} FC-LANG="" \
@@ -206,6 +204,21 @@ rm -fr %{buildroot}
 
 
 %changelog
+* Mon Apr 04 2011 Nicolas Mailhot <nicolas.mailhot at laposte.net>
+- 2.33-1
+— Improved Hebrew and Armenian
+
+* Tue Feb 08 2011 Fedora Release Engineering <rel-eng@lists.fedoraproject.org>
+- 2.32-2
+– Rebuilt for https://fedoraproject.org/wiki/Fedora_15_Mass_Rebuild
+
+* Fri Sep 10 2010 Nicolas Mailhot <nicolas.mailhot at laposte.net>
+- 2.32-1
+
+* Tue Jun  3 2010 Nicolas Mailhot <nicolas.mailhot at laposte.net>
+- 2.31-1
+— drop Serif Condensed Italic naming patch
+
 * Mon Sep  7 2009 Nicolas Mailhot <nicolas.mailhot at laposte.net>
 - 2.30-2
 — patch to fix bug #505129 Serif Condensed Italic is not Serif Condensed

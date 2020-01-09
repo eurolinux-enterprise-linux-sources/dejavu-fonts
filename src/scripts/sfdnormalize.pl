@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 
-# $Id: sfdnormalize.pl 2216 2008-04-13 15:23:18Z noct_dreamer $
+# $Id: sfdnormalize.pl 2464 2011-02-18 18:10:01Z ben_laenen $
 
 # SFD normalizer (discards GUI information from SFD files)
 # (c)2004,2005 Stepan Roh (PUBLIC DOMAIN)
@@ -51,7 +51,7 @@ sub process_sfd_file($) {
   my %pos_glyphs_map = ();
 
   while (<SFD>) {
-    next if (/^(WinInfo|DisplaySize|HStem|VStem|ModificationTime|CreationTime|VWidth|TeX|TeXData|Validated):/);
+    next if (/^(WinInfo|DisplaySize|HStem|VStem|ModificationTime|CreationTime|VWidth|TeX|TeXData|Validated|AltUni2):/);
     next if (/^$/);
     s,^(NameList:).*$,$1 AGL without afii,;
     s,^Ref:,Refer:,;
