@@ -16,7 +16,7 @@ original style, using an open collaborative development process.
 
 Name:    %{fontname}-fonts
 Version: 2.33
-Release: 5%{?alphatag}%{?dist}
+Release: 6%{?alphatag}%{?dist}
 Summary: DejaVu fonts
 
 Group:     User Interface/X
@@ -200,6 +200,9 @@ rm -fr %{buildroot}
 
 
 %changelog
+* Fri Dec 27 2013 Daniel Mach <dmach@redhat.com> - 2.33-6
+- Mass rebuild 2013-12-27
+
 * Wed Feb 13 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.33-5
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_19_Mass_Rebuild
 
